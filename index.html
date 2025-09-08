@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ImagineOS Aismira - InfinityUI</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- 动态背景层 -->
+    <div class="background-container">
+        <div class="liquid-glass-bg"></div>
+        <div class="particle-system"></div>
+        <div class="gradient-orbs">
+            <div class="orb orb-1"></div>
+            <div class="orb orb-2"></div>
+            <div class="orb orb-3"></div>
+            <div class="orb orb-4"></div>
+        </div>
+    </div>
+
+    <!-- 主界面容器 -->
+    <div class="os-container">
+        <!-- 顶部状态栏 -->
+        <header class="status-bar">
+            <div class="status-left">
+                <div class="logo">
+                    <i class="fas fa-infinity"></i>
+                    <span>ImagineOS</span>
+                </div>
+                <div class="system-info">
+                    <span class="time" id="current-time">12:34:56</span>
+                    <span class="date" id="current-date">Monday, Jan 15</span>
+                </div>
+            </div>
+            <div class="status-center">
+                <div class="search-bar">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="Search anything..." id="global-search">
+                </div>
+            </div>
+            <div class="status-right">
+                <div class="language-selector">
+                    <i class="fas fa-globe"></i>
+                    <select id="language-select">
+                        <option value="en">English</option>
+                        <option value="zh">中文</option>
+                        <option value="ja">日本語</option>
+                        <option value="ko">한국어</option>
+                        <option value="fr">Français</option>
+                        <option value="de">Deutsch</option>
+                        <option value="es">Español</option>
+                        <option value="it">Italiano</option>
+                        <option value="pt">Português</option>
+                        <option value="ru">Русский</option>
+                        <option value="ar">العربية</option>
+                        <option value="hi">हिन्दी</option>
+                    </select>
+                </div>
+                <div class="system-controls">
+                    <button class="control-btn" id="wifi-btn">
+                        <i class="fas fa-wifi"></i>
+                    </button>
+                    <button class="control-btn" id="bluetooth-btn">
+                        <i class="fas fa-bluetooth"></i>
+                    </button>
+                    <button class="control-btn" id="volume-btn">
+                        <i class="fas fa-volume-up"></i>
+                    </button>
+                    <button class="control-btn" id="battery-btn">
+                        <i class="fas fa-battery-three-quarters"></i>
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <!-- 主桌面区域 -->
+        <main class="desktop">
+            <!-- 桌面图标网格 -->
+            <div class="desktop-icons">
+                <div class="desktop-icon" data-app="files">
+                    <div class="icon-container">
+                        <i class="fas fa-folder"></i>
+                    </div>
+                    <span class="icon-label">Files</span>
+                </div>
+                <div class="desktop-icon" data-app="settings">
+                    <div class="icon-container">
+                        <i class="fas fa-cog"></i>
+                    </div>
+                    <span class="icon-label">Settings</span>
+                </div>
+                <div class="desktop-icon" data-app="browser">
+                    <div class="icon-container">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <span class="icon-label">Browser</span>
+                </div>
+                <div class="desktop-icon" data-app="music">
+                    <div class="icon-container">
+                        <i class="fas fa-music"></i>
+                    </div>
+                    <span class="icon-label">Music</span>
+                </div>
+                <div class="desktop-icon" data-app="camera">
+                    <div class="icon-container">
+                        <i class="fas fa-camera"></i>
+                    </div>
+                    <span class="icon-label">Camera</span>
+                </div>
+                <div class="desktop-icon" data-app="gallery">
+                    <div class="icon-container">
+                        <i class="fas fa-images"></i>
+                    </div>
+                    <span class="icon-label">Gallery</span>
+                </div>
+                <div class="desktop-icon" data-app="calculator">
+                    <div class="icon-container">
+                        <i class="fas fa-calculator"></i>
+                    </div>
+                    <span class="icon-label">Calculator</span>
+                </div>
+                <div class="desktop-icon" data-app="notes">
+                    <div class="icon-container">
+                        <i class="fas fa-sticky-note"></i>
+                    </div>
+                    <span class="icon-label">Notes</span>
+                </div>
+                <div class="desktop-icon" data-app="calendar">
+                    <div class="icon-container">
+                        <i class="fas fa-calendar-alt"></i>
+                    </div>
+                    <span class="icon-label">Calendar</span>
+                </div>
+                <div class="desktop-icon" data-app="weather">
+                    <div class="icon-container">
+                        <i class="fas fa-cloud-sun"></i>
+                    </div>
+                    <span class="icon-label">Weather</span>
+                </div>
+                <div class="desktop-icon" data-app="mail">
+                    <div class="icon-container">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <span class="icon-label">Mail</span>
+                </div>
+                <div class="desktop-icon" data-app="maps">
+                    <div class="icon-container">
+                        <i class="fas fa-map-marked-alt"></i>
+                    </div>
+                    <span class="icon-label">Maps</span>
+                </div>
+            </div>
+        </main>
+
+        <!-- 底部圆润导航栏 -->
+        <nav class="bottom-nav">
+            <div class="nav-container">
+                <button class="nav-btn active" id="home-btn">
+                    <i class="fas fa-home"></i>
+                    <span>Home</span>
+                </button>
+                <button class="nav-btn" id="apps-btn">
+                    <i class="fas fa-th"></i>
+                    <span>Apps</span>
+                </button>
+                <button class="nav-btn" id="recent-btn">
+                    <i class="fas fa-history"></i>
+                    <span>Recent</span>
+                </button>
+                <button class="nav-btn" id="notifications-btn">
+                    <i class="fas fa-bell"></i>
+                    <span>Alerts</span>
+                    <span class="notification-badge">3</span>
+                </button>
+                <button class="nav-btn" id="user-btn">
+                    <i class="fas fa-user-circle"></i>
+                    <span>Profile</span>
+                </button>
+            </div>
+        </nav>
+
+        <!-- Zoey AI 悬浮球 -->
+        <div class="zoey-orb" id="zoey-orb">
+            <div class="orb-container">
+                <div class="orb-glow"></div>
+                <div class="orb-core">
+                    <i class="fas fa-robot"></i>
+                </div>
+                <div class="orb-ripples">
+                    <div class="ripple"></div>
+                    <div class="ripple"></div>
+                    <div class="ripple"></div>
+                </div>
+            </div>
+            <div class="orb-tooltip">Hi! I'm Zoey</div>
+        </div>
+    </div>
+
+    <!-- Zoey AI 语音助手模态框 -->
+    <div class="modal" id="zoey-modal">
+        <div class="modal-content zoey-modal">
+            <div class="zoey-header">
+                <div class="zoey-avatar">
+                    <div class="avatar-container">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <div class="status-indicator online"></div>
+                </div>
+                <div class="zoey-info">
+                    <h2>Zoey AI Assistant</h2>
+                    <p>Your super intelligent voice assistant</p>
+                </div>
+                <button class="close-btn" id="close-zoey">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="zoey-chat">
+                <div class="chat-messages" id="chat-messages">
+                    <div class="message zoey-message">
+                        <div class="message-avatar">
+                            <i class="fas fa-robot"></i>
+                        </div>
+                        <div class="message-content">
+                            <p>Hello! I'm Zoey, your AI assistant. How can I help you today?</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="chat-input">
+                    <div class="input-container">
+                        <input type="text" id="chat-input" placeholder="Type your message or speak...">
+                        <button class="voice-btn" id="voice-btn">
+                            <i class="fas fa-microphone"></i>
+                        </button>
+                        <button class="send-btn" id="send-btn">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 应用窗口容器 -->
+    <div class="app-windows" id="app-windows"></div>
+
+    <!-- 通知系统 -->
+    <div class="notifications" id="notifications"></div>
+
+    <!-- 应用脚本 -->
+    <script src="apps/files.js"></script>
+    <script src="apps/settings.js"></script>
+    <script src="apps/calculator.js"></script>
+    <script src="apps/browser.js"></script>
+    <script src="apps/music.js"></script>
+    <script src="apps/notes.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
