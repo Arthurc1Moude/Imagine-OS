@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "hello-calc-cli"
+version = "0.1.0"
+description = "A simple CLI with greet and calc subcommands"
+readme = "README.md"
+requires-python = ">=3.8"
+license = { text = "MIT" }
+authors = [{ name = "Your Name" }]
+dependencies = []
+
+[project.scripts]
+mycli = "mycli.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["mycli"]
+
